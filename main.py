@@ -182,6 +182,7 @@ class Recorder(object):
         r_values = values[:] #a copy of all elements
         # reduce by 20%
         r_values = map(lambda x: x * 0.8, r_values)
+        r_values = int(r_values)
         print("r_values")
         print(r_values)
         
