@@ -172,9 +172,9 @@ class Recorder(object):
         print("sound[0]")
         print(sound[0])
         '''
-        #values = array("h", buf)
+        values = array("h", buf)
         #values = struct.unpack("<h",buf)
-        values = np.array(struct.unpack("<h",buf))
+        #values = np.array(struct.unpack("<h",buf))
 
         # get right values only
         #r_values = values[1::2] # gives you every second value eg [1,2,3,4,5,6] would give [2,4,6,8]
@@ -184,15 +184,18 @@ class Recorder(object):
         r_values = map(lambda x: x * 0.8, r_values)
         print("r_values")
         print(r_values)
-        '''
+        
         # you can assign only array for slice, not list
         # so we need to convert back list to array
-        values[1::2] = array("h", r_values)
-        print("values")
+        values[:] = array("h", r_values)
+        print("values[:] ")
         print(values)
-        '''
+        
         # convert back the array to a byte buffer for speaker
         #sample.write(values.tostring())
+        final = values.tostring()
+        print("final string value")
+        print(final)
  
  
     def start(self):
