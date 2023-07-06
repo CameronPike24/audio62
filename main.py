@@ -172,7 +172,9 @@ class Recorder(object):
         print("sound[0]")
         print(sound[0])
         '''
-        values = array("h", buf)
+        #values = array("h", buf)
+        #values = struct.unpack("<h",buf)
+        values = np.array(struct.unpack('{n}h',buf))
 
         # get right values only
         #r_values = values[1::2] # gives you every second value eg [1,2,3,4,5,6] would give [2,4,6,8]
