@@ -180,6 +180,10 @@ class Recorder(object):
         #r_values = values[1::2] # gives you every second value eg [1,2,3,4,5,6] would give [2,4,6,8]
         #r_values = values[1::1]
         r_values = values[:] #a copy of all elements
+        print("r_values")
+        print(r_values)
+        
+        '''
         # reduce by 20%
         r_values = map(lambda x: x * 0.8, r_values)
         r_values = int(r_values)
@@ -197,7 +201,7 @@ class Recorder(object):
         final = values.tostring()
         print("final string value")
         print(final)
- 
+        '''
  
     def start(self):
         self.mic.start()
